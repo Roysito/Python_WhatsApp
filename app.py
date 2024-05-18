@@ -55,7 +55,7 @@ def webhook():
 def verificar_token(req):
     token = req.args.get('hub.verify_token')
     challenge = req.args.get('hub.challenge')
-    if challenge and tokeb == TOKEN_ANDERCODE:
+    if challenge and token == TOKEN_ANDERCODE:
         return challenge
     else:
         return jsonify({'Error':'Token invalido'}),401
